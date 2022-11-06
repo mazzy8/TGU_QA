@@ -1,0 +1,31 @@
+graph {
+	node [shape=diamond]
+	1 [label="Reproduced?"]
+	2 [label="Test passed?"]
+	node [shape=box]
+	3 [label="New bug"]
+	4 [label=Close]
+	node [shape=ellipse]
+	5 [label=Approved]
+	6 [label="Not approved"]
+	7 [label=Active]
+	8 [label=Fix]
+	9 [label=Reopen]
+	10 [label=Check]
+	3 -- 1 [label="accept for 
+ verification"]
+	1 -- 5 [label=true]
+	1 -- 6 [label=false]
+	6 -- 4
+	5 -- 7 [label="take to 
+ work"]
+	7 -- 8
+	8 -- 2 [label="take for 
+ testing"]
+	2 -- 9 [label=false]
+	9 -- 7
+	2 -- 10 [label=true]
+	10 -- 4
+	label="bug life cycle"
+	fontsize=20
+}
